@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Response
+{% endblock %}
+
+{% block main %}
+
+    <h1>Astronomy Picture of the Day {{ links.date }}</h1>
+    copyright: {{ links.copyright }}
+    <img src="{{ links.hdurl }}"/>
+    <br/><br/>
+    {{ links.explanation }}
+
+{% endblock %}

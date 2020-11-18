@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h1>This is the history section which is mainly here to demonstrate my ability to store and retrieve information from a database</h1>
+    <br/>
+    <h2>This is the APOD queries history table:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Date Queried</th>
+                <th>APOD URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                {% if transaction.apod_url != None %}
+                <tr>
+                    <td>{{ transaction.time }}</td>
+                    <td>{{ transaction.date_queried }}</td>
+                    {% if transaction.apod_url == "Did not retrieve a URL" %}
+                    <td>Did not retrieve a URL</td>
+                    {% else %}
+                    <td><a href="{{ transaction.apod_url }}" target="_blank">{{ transaction.apod_url }}</a></td>
+                    {% endif %}
+                </tr>
+                {% endif %}
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <br/>
+    <br/>
+    <h2>That is the Mercury Retrorade history table:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Date Queried</th>
+                <th>Mercury Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                {% if transaction.mercstat != None %}
+                <tr>
+                    <td>{{ transaction.time }}</td>
+                    <td>{{ transaction.date_queried }}</td>
+                    {% if transaction.mercstat == 0 %}
+                    <td>Wasnt</td>
+                    {% else %}
+                    <td>Was</td>
+                    {% endif %}
+                </tr>
+                {% endif %}
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <br/>
+    <br/>
+    <h2>And lastly the Joke table giving you the when and first ten characters of the joke you got:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Joke</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                {% if transaction.joke != None %}
+                <tr>
+                    <td>{{ transaction.time }}</td>
+                    <td>{{ transaction.joke }}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}
+
+<!--<table class="table table-striped">-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--               <th>Time</th>-->
+<!--                <th>Date Queried</th>-->
+<!--                <th>APOD URL</th>-->
+<!--                <th>Joke</th>-->
+<!--                <th>Mercury Status</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            {% for transaction in transactions %}-->
+<!--                <tr>-->
+<!--                    <td>{{ transaction.time }}</td>-->
+<!--                    {% if not transaction.date_queried %}-->
+<!--                    <td></td>-->
+<!--                    {% else %}-->
+<!--                    <td>{{ transaction.date_queried }}</td>-->
+<!--                    {% endif %}-->
+<!--                    {% if not transaction.apod_url %}-->
+<!--                    <td></td>-->
+<!--                    {% else %}-->
+<!--                    <td><a href="{{ transaction.apod_url }}" target="_blank">{{ transaction.apod_url }}</a></td>-->
+<!--                    {% endif %}-->
+<!--                    {% if not transaction.joke %}-->
+<!--                    <td></td>-->
+<!--                    {% else %}-->
+<!--                    <td>{{ transaction.joke }}</td>-->
+<!--                    {% endif%}-->
+<!--                    {% if transaction.mercstat == None %}-->
+<!--                    <td></td>-->
+<!--                    {% elif transaction.mercstat == 0 %}-->
+<!--                    <td>Wasnt</td>-->
+<!--                    {% else %}-->
+<!--                    <td>Was</td>-->
+<!--                    {% endif %}-->
+<!--                </tr>-->
+<!--            {% endfor %}-->
+
+<!--        </tbody>-->
+<!--    </table>-->

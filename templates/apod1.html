@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+
+    <h1>Astronomy Picture of the Day</h1>
+    <div class="form-group">
+        <p>Enter a date to see that day's Astronomy Picture of the Day or APOD</p>
+    </div>
+    <form action="/apod" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="date" placeholder="dd-mm-yyyy" type="date"
+            value="" min="1997-01-01" max= "{{ today }}">
+        </div>
+        <button class="btn button" type="submit">Summon picture</button>
+    </form>
+{% endblock %}
+
+<!-- value="" min="1997-01-01" max= "{{ today }}"-->

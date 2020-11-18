@@ -1,0 +1,76 @@
+body
+{
+    background-color:gold;
+}
+.navbar
+{
+    background-color:gold;
+}
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #483D8B;
+}
+nav .navbar-brand .red
+{
+    color: #9932CC;
+}
+nav .navbar-brand .yellow
+{
+    color: #8B008B;
+}
+nav .navbar-brand .green
+{
+    color: #8A2BE2;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+.button{
+    background-color: #8A2BE2;
+    color:white;
+
+}
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+p {
+   font-weight:bold;
+   font-size:135%;
+}
+h1{
+    color: #8A2BE2;
+}
+
+h2{
+    color: #9932CC;
+}

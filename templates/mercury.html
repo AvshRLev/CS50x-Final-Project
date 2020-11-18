@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Mercury
+{% endblock %}
+
+{% block main %}
+
+    <h1>The Mercury Retrograde Section</h1>
+    <br/>
+    <p><a href="https://www.farmersalmanac.com/mercury-retrograde">In this link</a> you will be able to find a more
+    elaborate explanation and even a video of the phenomenon. Generally a Mercury retrograde refers to
+    an optical illusion that makes it look as though the planet Mercury changes the pattern of its movement in relation to all the stars in the night sky for a period of
+    about 3 weeks and appears to move backwards. Actually, all planets do that sometimes but
+    for different amounts of time and at different intervals.
+    </p>
+    <p>In astrology the planet Mercury is associated with comunication and transportation. When it changes direction
+    in the night sky or "goes retrograde" the general effect is that of disruption in these domains which may
+    result in discomfort.</p>
+    <p>I used to be a skeptic but have seen and experienced things which made me decide to reserve judgement.
+    I present you with this quick and easy way to find out if Mercury was, is or will be in retrograde
+    at a certain time.</p>
+    <div class="form-group">
+        <p>Enter a date to check Mercury's retrograde status:</p>
+    </div>
+    <form action="/mercury" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="date" placeholder="dd-mm-yyyy" type="date">
+        </div>
+        <button class="btn button" type="submit">Check date</button>
+    </form>
+{% endblock %}
+
+<!-- value="" min="1997-01-01" max= "{{ today }}"-->

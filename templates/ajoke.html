@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    a Joke
+{% endblock %}
+
+{% block main %}
+
+    {{ joke }}
+
+    <div class="form-group">
+        <p>Click the button to get another joke</p>
+    </div>
+    <form action="/joke" method="post">
+        <button class="btn button" type="submit">Get another joke</button>
+    </form>
+{% endblock %}
